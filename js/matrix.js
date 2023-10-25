@@ -16,7 +16,7 @@ const sleep = (ms) => new Promise((resolve) => {
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const alphabet = "SKILLTRADEZ   ";
+const alphabet = "SKILLTRADEZ ";
 
 const fontSize = 12;
 const columns = canvas.width / fontSize;
