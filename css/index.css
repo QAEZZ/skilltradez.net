@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap');
+
+:root {
+    --color-background: rgb(20, 20, 20);
+    --color-text: rgb(230, 230, 230);
+}
+
+body {
+    font-family: 'Sometype Mono', monospace;
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+#matrix-effect {
+    color: rgb(45, 131, 45);
+    height: 100%;
+    width: 100%;
+}
