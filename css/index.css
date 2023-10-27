@@ -39,7 +39,7 @@ header {
     border-bottom: 2px solid var(--color-border);
     margin-top: 25px;
     transform: translate(-50%, 0);
-    background: linear-gradient(transparent 75%, var(--color-border));
+    background: linear-gradient(transparent 75%, rgb(106, 106, 121));
 }
 
 header img {
