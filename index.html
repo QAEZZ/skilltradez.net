@@ -1,37 +1,136 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SkillTradez</title>
-        <meta name="description" content="SkillTradez' Official Website">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/shared/animation-classes.css">
-    </head>
-    <body>
-        <!-- <canvas id="matrix-effect"></canvas> -->
-        <header>
-            <img src="media/barcode.svg" style="height:75%;" />
 
-            <a>Shop</a>
-            <a>Discord</a>
-            <a>PGP Keys</a>
-        </header>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SkillTradez</title>
+    <meta name="description" content="SkillTradez' Official Website">
 
-        <div id="particles-js"></div>
+    <meta content="SkillTradez" property="og:title" />
+    <meta content="Welcome to the official site of SkillTradez!"
+        property="og:description" />
+    <meta content="https://skilltradez.net" property="og:url" />
+    <meta content="https://skilltradez.net/media/SkillTradez S.png" property="og:image" />
+    <meta content="#e6e6e6" data-react-helmet="true" name="theme-color" />
 
-        <div class="flex-container" id="background">
-            <h1>Title</h1>
-            <h3>Slogan</h3>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="media/SkillTradez S.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/shared/animation-classes.css">
+
+    <script src="https://kit.fontawesome.com/bbd5e05e51.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- <canvas id="matrix-effect"></canvas> -->
+    <header>
+        <img src="media/barcode.svg" />
+
+        <div id="links">
+            <a href="https://discord.gg/pq2YGAQ556" target="_blank">Discord</a>
+            <a onclick="alert('coming soon');">Shop</a>
+            <a href="#member-pgp">PGP Keys</a>
+            <a href="#staff">Staff</a>
+            <a href="#content">About Us</a>
+        </div>
+    </header>
+
+    <i id="play-pause" onclick="toggleMusic();" class="fa-solid fa-play first-run"></i>
+
+    <div id="particles-js"></div>
+
+    <div class="flex-container" id="background">
+        <img id="logo" src="media/SkillTradez S.png" />
+    </div>
+
+    <div class="flex-container" id="content">
+        <div class="field">
+            <h1 class="heading">About Us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quo laudantium dolore delectus, enim
+                perferendis facere. Maiores possimus accusantium ut sed blanditiis nam, tempore error aliquam porro.
+                Voluptatibus, ducimus dignissimos.<br /><br />Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Ratione molestias quaerat cumque neque pariatur fugit, ipsa ipsam illo odit? Recusandae, aperiam.
+                Consectetur possimus et modi commodi molestias nemo est maiores?</p>
         </div>
 
-        <div spacer></div>
-        
-        <script src="js/script.js" async defer></script>
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script src="app.js"></script>
-        
-        <!-- <script src="js/matrix.js" async defer></script> -->
-    </body>
+        <div class="field" id="staff-field">
+            <h1 class="heading" id="staff">Staff</h1>
+            <div class="card-box">
+                <div class="card-item">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Rafael</p>
+                    <p>Owner</p>
+                </div>
+
+                <div class="card-item">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Maximum Trollage</p>
+                    <p>Consigliere</p>
+                </div>
+
+                <div class="card-item">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Yendy</p>
+                    <p>Consigliere</p>
+                </div>
+
+                <div class="card-item">
+                    <i class="fa-regular fa-user"></i>
+                    <p>jim</p>
+                    <p>Administrator</p>
+                </div>
+
+                <div class="card-item">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Alfred Murrah</p>
+                    <p></p>
+                </div>
+
+                <div class="card-item">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Polar</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="field" id="member-pgp">
+            <h1 class="heading">Member PGP Keys</h1>
+
+            <p id="total-member-pgp-keys">(? Total)</p>
+
+            <input id="member-pgp-key-lookup" type="text" />
+
+            <div id="result">
+                <h3>Results (<span id="member-pgp-result-amount">?</span>):</h3>
+                <pre id="member-pgp-key-result">
+                </pre>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer id="bottom">
+        © 2023 SkillTradez. All rights reserved.
+        <br />
+        Designed by <a href="https://qaezz.dev" target="_blank">QAEZZ</a> & <a href="https://github.com/pol-arr" target="_blank">Polar</a> | Made by <a
+            href="https://qaezz.dev" target="_blank">QAEZZ</a>.
+        <br />
+        <br />
+        <a href="#">Back to top?</a>
+    </footer>
+
+    <script src="js/script.js" async defer></script>
+    <script src="js/player.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/pgpSearch.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+
+    <!-- <script src="js/matrix.js" async defer></script> -->
+</body>
+
 </html>

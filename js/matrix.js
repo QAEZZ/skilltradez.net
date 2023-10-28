@@ -27,7 +27,7 @@ for (let x = 0; x < columns; x++) {
     rainDrops[x] = 1;
 }
 
-const duration = 8500;
+const duration = 5500;
 let startTime;
 let animationFrameId;
 let alphabetIndex = 0; // To keep track of the position in alphabet
@@ -44,10 +44,10 @@ const animate = async () => {
             canvas.classList.add('fade-out');
         }
 
-        context.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        context.fillStyle = 'rgba(15, 15, 15, 0.25)';
         context.fillRect(0, 0, canvas.width, canvas.height);
 
-        context.fillStyle = '#0F0';
+        context.fillStyle = 'rgb(230, 230, 230)';
         context.font = fontSize + 'px monospace';
 
         for (let i = 0; i < rainDrops.length; i++) {
@@ -66,14 +66,13 @@ const animate = async () => {
             startTime = currentTime;
         }
 
-        if (elapsedTime < duration) {
-            animationFrameId = requestAnimationFrame(animate);
-        } else {
+        if (elapsedTime > duration) {
             await sleep(5500);
             cancelAnimationFrame(animationFrameId);
+            canvas.remove();
         }
 
-        await sleep(25); // A small delay to control the frame rate
+        await sleep(10); // A small delay to control the frame rate
     }
 };
 

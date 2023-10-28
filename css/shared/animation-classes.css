@@ -1,5 +1,22 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 10 versions,IE 11
+*/
+
 .fade-out {
-    animation: fadeout 3s forwards;
+    -webkit-animation: fadeout 3s forwards;
+            animation: fadeout 3s forwards;
+}
+
+@-webkit-keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes fadeout {

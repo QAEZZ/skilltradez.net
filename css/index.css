@@ -1,13 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap');
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 10 versions,IE 11
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap");
 
 :root {
-    --color-background: rgb(15, 15, 20);
+    --color-background: rgb(15, 15, 15);
+    --color-background-light: rgb(20, 20, 20);
     --color-text: rgb(230, 230, 230);
-    --color-border: rgb(166, 166, 181);
+    --color-border: rgb(240, 240, 240);
+    --color-border-dark: rgba(240, 240, 240, 0.25);
 }
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+#matrix-effect {
+    height: 100vh;
+    width: 100vw;
+    z-index: 69;
+    position: absolute;
+    top: 0;
+    color: var(--color-text);
 }
 
 #particles-js {
@@ -18,11 +36,17 @@
     z-index: -1;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
-    font-family: 'Sometype Mono', monospace;
+    font-family: "Sometype Mono", monospace;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 
     background-color: var(--color-background);
     color: var(--color-text);
@@ -30,33 +54,81 @@ body {
     overflow-x: hidden;
 }
 
+footer {
+    background-color: var(--color-background);
+    text-align: center;
+    color: var(--color-border-dark);
+    padding-bottom: 20px;
+}
+
+footer a {
+    color: var(--color-text);
+    opacity: 0.5;
+    font-style: normal;
+    text-decoration: underline;
+
+    -webkit-transition: all 0.2s;
+
+    -o-transition: all 0.2s;
+
+    transition: all 0.2s;
+}
+
+footer a:hover {
+    opacity: 0.3;
+}
+
+a {
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
 header {
     position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
     top: 0;
-    width: 95%;
+    width: calc(100% - 10px);
     left: 50%;
     height: 5vh;
     border-bottom: 2px solid var(--color-border);
-    margin-top: 25px;
-    transform: translate(-50%, 0);
-    background: linear-gradient(transparent 75%, rgb(106, 106, 121));
+    margin-top: 5px;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--color-border-dark)));
+    background: -o-linear-gradient(transparent, var(--color-border-dark));
+    background: linear-gradient(transparent, var(--color-border-dark));
+    z-index: 69420;
 }
 
 header img {
-    float: left;
+    height: 75%;
+    padding-bottom: 5px;
 }
 
 header a {
     float: right;
-    text-decoration: none;
-    margin: 0 10px;
     font-size: 1.25em;
-    cursor: pointer;
-    transition: all .2s ease;
+    margin: 0 11px;
 }
 
-header a:hover {
-    opacity: .5;
+header div#links {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
 }
 
 h1,
@@ -64,41 +136,230 @@ h2,
 h3 {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 #matrix-effect {
-    color: rgb(45, 131, 45);
+    position: fixed;
+    top: 0;
     height: 100%;
     width: 100%;
 }
 
+#play-pause {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px 10px;
+    font-size: xx-large;
+    z-index: 420;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+#play-pause:hover {
+    opacity: 0.75;
+}
+
 .flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     gap: 5px;
 
     height: 100vh;
     width: 100vw;
-    /* border-bottom: 5px solid var(--color-border); */
 }
 
-/* .flex-container#background {
-    background-image: url('../media/background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+#background {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
 
-    height: 98vh;
-} */
+#background img {
+    position: fixed;
+    z-index: -1;
+    width: 15%;
+    margin-bottom: 2vh;
+    aspect-ratio: 1/1;
+}
 
-.flex-container#background h1 {
-    /* background-color: var(--color-background); */
+#background h1 {
     padding: 5px;
     border-radius: 5px;
 }
 
-div[spacer] {
-    padding: 500px 10px;
+.heading {
+    text-decoration: underline;
+}
+
+#content .heading:first-of-type {
+    margin-top: 0;
+}
+
+#content {
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(10%, var(--color-background)));
+    background: -o-linear-gradient(transparent, var(--color-background) 10%);
+    background: linear-gradient(transparent, var(--color-background) 10%);
+    height: auto;
+    padding: 15% 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#content .field {
+    width: 70%;
+}
+
+#content .field#staff-field {
+    width: 40vw;
+}
+
+#content .field:first-of-type {
+    margin-top: 20px;
+}
+
+#staff::before {
+    /* to make the anchors have an offset */
+    content: "";
+    display: block;
+    height: 55px;
+}
+
+#member-pgp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+#member-pgp::before {
+    /* to make the anchors have an offset */
+    content: "";
+    display: block;
+    height: 55px;
+}
+
+#total-member-pgp-keys {
+    opacity: 0.5;
+    margin-top: 5px;
+}
+
+#member-pgp-key-lookup {
+    width: clamp(30%, 50%, 70%);
+    margin-bottom: 15px;
+    height: 1.3rem;
+    text-align: center;
+    font-size: large;
+    background-color: var(--color-background-light);
+
+    border-radius: 5px;
+    border: 1px solid var(--color-border-dark);
+    color: var(--color-text);
+}
+
+#member-pgp h3 {
+    float: left;
+    margin: 0 0 5px 0;
+}
+
+#result {
+    width: clamp(40%, 60%, 80%);
+}
+
+#member-pgp-key-result {
+    width: calc(100% - 15px);
+    /* 15px = padding + border */
+    min-height: 60vh;
+    padding: 6px;
+    font-size: normal;
+    border-radius: 5px;
+    border: 1px solid var(--color-border-dark);
+    background-color: var(--color-background-light);
+    overflow: scroll;
+}
+
+@media (max-width: 1200px) {
+    #content .field#staff-field {
+        width: 80vw;
+    }
+
+    #content .field:first-of-type {
+        margin-top: 60px;
+    }
+
+    #member-pgp-key-lookup {
+        width: 79vw;
+    }
+
+    #result {
+        width: 80vw;
+    }
+}
+
+/* narrower than 575px */
+@media (max-width: 590px) {
+
+    #links a[href="#content"],
+    #links a[href="#staff"],
+    #links a[href="#member-pgp"] {
+        display: none;
+    }
+
+    #content .field#staff-field {
+        width: 100vw;
+    }
+
+    #background img {
+        width: 35%;
+    }
+
+    #content .field:first-of-type {
+        margin-top: 60px;
+    }
+
+    #member-pgp-key-lookup {
+        width: 89vw;
+    }
+
+    #result {
+        width: 90vw;
+    }
+}
+
+@media (max-width: 320px) {
+    header #links {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
+        margin-bottom: 7px;
+    }
+
+    header a {
+        float: unset;
+        font-size: 1.25em;
+        margin: 0;
+    }
 }
