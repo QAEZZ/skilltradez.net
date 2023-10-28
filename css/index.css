@@ -191,7 +191,7 @@ h3 {
 #background img {
     position: fixed;
     z-index: -1;
-    width: 15%;
+    width: 10%;
     margin-bottom: 2vh;
     aspect-ratio: 1/1;
 }
